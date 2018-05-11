@@ -1,0 +1,12 @@
+// Menus custom
+.spectre-menu {
+  .spectre-menu-item {
+    font-size: $font-size-sm-1;
+    color: $link-primary-color;
+    border: none;
+    &:focus,
+    &:hover {
+      background: $bg-color-light-2
+    }
+  }
+}

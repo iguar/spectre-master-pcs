@@ -1,0 +1,192 @@
+// Buttons
+.spectre-btn {
+  //@include control-transition();
+  appearance: none;
+  background: $bg-color-light-3;
+  border: $spectre-border-width solid $border-color-2;
+  border-radius: $spectre-border-radius;
+  color: $primary-color-2;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-12;
+  height: $control-height;
+  width: $spectre-control-size;
+  line-height: $line-height;
+  outline: none;
+  padding: $control-padding-y $control-padding-x;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:focus {
+    //@include control-shadow();
+  }
+  &:hover {
+    background: $bg-color-light-4;
+    //border-color: $primary-color-dark;
+    text-decoration: none;
+  }
+  &:active,
+  &.active {
+    background: $bg-color-light-3;
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
+    &.loading {
+      &::after {
+        border-bottom-color: $light-color;
+        border-left-color: $light-color;
+      }
+    }
+  }
+  &[disabled],
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  // Button Primary
+  &.spectre-btn-primary {
+    background: $spectre-primary-color;
+    border: none;
+    color: $light-color;
+    &:hover {
+      background: $spectre-primary-color-dark;
+    }
+    &:active,
+    &.active {
+      //background: darken($primary-color-dark, 4%);
+      //border-color: darken($primary-color-dark, 7%);
+      //color: $light-color;
+    }
+    &.loading {
+      &::after {
+        border-bottom-color: $light-color;
+        border-left-color: $light-color;
+      }
+    }
+  }
+
+  // Button Colors
+  &.spectre-btn-success {
+    @include button-variant($success-color);
+  }
+
+  &.spectre-btn-error {
+    @include button-variant($error-color);
+  }
+
+  // Button Link
+  &.spectre-btn-link {
+    background: transparent;
+    border-color: transparent;
+    color: $link-color;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      color: $link-color-dark;
+    }
+  }
+
+  // Button Sizes
+  &.spectre-btn-sm {
+    font-size: $font-size-sm;
+    height: $control-size-sm;
+    padding: $control-padding-y-sm $control-padding-x-sm;
+  }
+
+  &.spectre-btn-lg {
+    font-size: $font-size-lg;
+    height: $control-size-lg;
+    padding: $control-padding-y-lg $control-padding-x-lg;
+  }
+
+  // Button Block
+  &.spectre-btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  // Button Action
+  &.spectre-btn-action {
+    width: $spectre-control-size;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.spectre-btn-sm {
+      width: $spectre-control-size-sm;
+    }
+
+    &.spectre-btn-lg {
+      width: $spectre-control-size-lg;
+    }
+
+    &.spectre-btn-xlg {
+      width: $spectre-control-size-xlg;
+    }
+  }
+
+  // Button Clear
+  &.spectre-btn-clear {
+    background: transparent;
+    border: 0;
+    color: currentColor;
+    height: $unit-4;
+    line-height: $unit-4;
+    margin-left: $unit-1;
+    margin-right: -2px;
+    opacity: 1;
+    padding: 0;
+    text-decoration: none;
+    width: $unit-4;
+
+    &:hover {
+      opacity: .95;
+    }
+
+    &::before {
+      content: "\2715";
+    }
+  }
+}
+
+// Button groups
+.spectre-btn-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  .spectre-btn {
+    flex: 1 0 auto;
+    &:first-child:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      margin-left: -$border-width;
+    }
+    &:last-child:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: -$border-width;
+    }
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      z-index: $zindex-0;
+    }
+  }
+
+  &.spectre-btn-group-block {
+    display: flex;
+
+    .spectre-btn {
+      flex: 1 0 0;
+    }
+  }
+}
