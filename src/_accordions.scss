@@ -1,5 +1,5 @@
 // Accordions
-.accordion {
+.spectre-accordion {
   input:checked ~,
   &[open] {
     & .accordion-header {

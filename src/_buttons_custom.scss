@@ -8,7 +8,7 @@
   color: $primary-color-2;
   cursor: pointer;
   display: inline-block;
-  font-size: $font-size-12;
+  font-size: $font-size;
   height: $control-height;
   width: $spectre-control-size;
   line-height: $line-height;
@@ -70,6 +70,27 @@
     }
   }
 
+  // Button Primary
+  &.spectre-btn-secondary {
+    border: $spectre-border-width solid $border-color-3;
+    border-radius: $spectre-border-radius-lg;
+    @include linear-gradient($gradient-color-start-1, $gradient-color-end-1);
+    &:hover {
+      background: linear-gradient($gradient-color-start-1, $gradient-color-end-hover-1);
+    }
+    &:active,
+    &.active {
+      border-color: $border-color-4;
+      @include linear-gradient($gradient-color-start-2, $gradient-color-end-2);
+    }
+    &.loading {
+      &::after {
+        border-bottom-color: $light-color;
+        border-left-color: $light-color;
+      }
+    }
+  }
+
   // Button Colors
   &.spectre-btn-success {
     @include button-variant($success-color);
@@ -95,14 +116,22 @@
   // Button Sizes
   &.spectre-btn-sm {
     font-size: $font-size-sm;
-    height: $control-size-sm;
+    //height: $control-size-sm;
+    height: $control-height-sm;
+    width: $spectre-control-size-sm;
     padding: $control-padding-y-sm $control-padding-x-sm;
   }
 
   &.spectre-btn-lg {
     font-size: $font-size-lg;
-    height: $control-size-lg;
+    //height: $control-size-lg;
+    height: $control-height-lg;
+    width: $spectre-control-size-lg;
     padding: $control-padding-y-lg $control-padding-x-lg;
+  }
+
+  &.spectre-btn-auto {
+    width: auto;
   }
 
   // Button Block

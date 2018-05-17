@@ -1,0 +1,39 @@
+// Icon arrows
+.spectre-icon-solid-arrow-down,
+.spectre-icon-solid-arrow-left,
+.spectre-icon-solid-arrow-right,
+.spectre-icon-solid-arrow-up {
+  height: .8em;
+  width: .8em;
+  &::before {
+    content: "";
+    border: .4em solid currentColor;
+    border-bottom: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+}
+
+.spectre-icon-solid-arrow-down {
+  &::before {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.spectre-icon-solid-arrow-left {
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.spectre-icon-solid-arrow-right {
+  &::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+.spectre-icon-solid-arrow-up {
+  &::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}

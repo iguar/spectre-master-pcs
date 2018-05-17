@@ -1,6 +1,7 @@
 // Icon variables
 $icon-border-width: $border-width-lg;
-$icon-prefix: "icon";
+$icon-border-width-solid: .5rem;
+$icon-prefix: "spectre-icon";
 
 // Icon base style
 .#{$icon-prefix} {
