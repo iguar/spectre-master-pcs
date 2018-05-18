@@ -123,7 +123,7 @@
   }
 
   &.spectre-btn-lg {
-    font-size: $font-size-lg;
+    @include font(14);
     //height: $control-size-lg;
     height: $control-height-lg;
     width: $spectre-control-size-lg;

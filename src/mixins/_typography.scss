@@ -1,0 +1,9 @@
+@mixin font-size($size) {
+  font-size: $size/$main-html-font-size*1rem;
+}
+
+@mixin font($size: 14, $weight: 400) {
+  font-weight: $weight;
+  font-family: $sg-main-font-family;
+  @include font-size($size);
+}
